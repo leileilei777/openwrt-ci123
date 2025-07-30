@@ -94,12 +94,12 @@ jobs:
     - name: Install Feeds(安装feeds)
       run: |
         cd $OPENWRT_PATH
-        git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
         ./scripts/feeds update -a
         git clone --depth 1 https://github.com/sbwml/openwrt_pkgs.git package/new/custom
         mv package/new/custom/luci-app-netspeedtest  package/new
         mv package/new/custom/speedtest-cli package/new
         rm -rf package/new/custom
+        git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
         ./scripts/feeds install -a
   
     - name: Load Custom Configuration(加载自定义配置)
