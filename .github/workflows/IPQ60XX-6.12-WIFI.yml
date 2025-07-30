@@ -99,7 +99,6 @@ jobs:
         mv package/new/custom/luci-app-netspeedtest  package/new
         mv package/new/custom/speedtest-cli package/new
         rm -rf package/new/custom
-        git clone https://github.com/xiaorouji/openwrt-passwall2.git package/passwall2
         ./scripts/feeds install -a
   
     - name: Load Custom Configuration(加载自定义配置)
